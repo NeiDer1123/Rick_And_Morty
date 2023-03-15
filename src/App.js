@@ -13,8 +13,17 @@ function App() {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
       .then((response) => response.json())
       .then((data) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
+        // if (data.name) {
+        //   setCharacters((oldChars) => [...oldChars, data]);
+        // } else {
+        //   window.alert("No hay personajes con ese ID");
+        // }
+        if(data.name){
+          if(characters.find((char)=> char.id === data.id)){
+            alert('El personaje ya esta añadido')
+          } else {
+            setCharacters((oldChars) => [...oldChars, data]);
+          }
         } else {
           window.alert("No hay personajes con ese ID");
         }
