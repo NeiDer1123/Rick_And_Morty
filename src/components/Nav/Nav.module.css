@@ -12,24 +12,24 @@
   /* width: 100%; */
   margin-bottom: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   border: solid rgba(18, 129, 123, 0.89) 10px;
   border-radius: 50pt
 }
 
 .img {
     margin: 10pt;
-    height: 180px;
+    height: 100px;
 }
 
 .button {
-  height: 30px;
-  width: 120px;
+  height: 25px;
+  width: 100px;
   margin: 5pt;
   color: rgba(255, 255, 255, 0.904);
   background-color:rgba(13, 100, 97, 0.89);
   border-radius: 8pt;
-  font-size: 20px;
+  font-size: 15px;
   font-variant:small-caps;
   border-color: rgba(0, 0, 0, 0);
   text-align: center;

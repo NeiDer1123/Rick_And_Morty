@@ -6,6 +6,11 @@ export default function Nav({ onSearch }) {
   return (
     <div>
       <nav className={styles.nav}>
+        <img
+          className={styles.img}
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/500px-Rick_and_Morty.svg.png"
+          alt="imagen"
+        />
         <div className={styles.div}>
           <Link to="/home">
             <div>
@@ -23,7 +28,7 @@ export default function Nav({ onSearch }) {
             </div>
           </Link>
         </div>
-          <SearchBar onSearch={onSearch} />
+        <SearchBar onSearch={onSearch} />
       </nav>
     </div>
   );
