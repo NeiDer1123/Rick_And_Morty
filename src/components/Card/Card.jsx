@@ -38,14 +38,16 @@ function Card({
 
   return (
     <div className={styles.card}>
-      {isFav ? (
-        <button onClick={handleFavorite}>❤️</button>
-      ) : (
-        <button onClick={handleFavorite}>🤍</button>
-      )}
-      <button onClick={onClose} className={styles.button}>
-        X
-      </button>
+      <div className={styles.divButtons}>
+        {isFav ? (
+          <button onClick={handleFavorite} className={styles.favorites}>❤️</button>
+        ) : (
+          <button onClick={handleFavorite} className={styles.favorites}>🤍</button>
+        )}
+        <button onClick={onClose} className={styles.button}>
+          X
+        </button>
+      </div>
       <NavLink to={`/detail/${id}`} className={styles.link}>
         <h2 className={styles.h2}>{name}</h2>
       </NavLink>
