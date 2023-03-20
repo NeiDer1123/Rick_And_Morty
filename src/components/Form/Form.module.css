@@ -26,7 +26,8 @@
     /* border: solid 2px; */
     /* border-color: rgba(255, 254, 254, 0.308);
     box-shadow: 0 0 100px #a6f282; */
-    border: solid 10px rgba(11, 87, 83, 0.89);
+    /* border: solid 10px rgba(11, 87, 83, 0.89); */
+    box-shadow: 0 0.1rem 0.4rem rgb(107, 105, 105)
 }
 
 .form {
@@ -56,7 +57,8 @@
 }
 
 .inputs:hover {
-    border: solid black
+    /* border: solid black */
+    box-shadow: 0 0.1rem 0.4rem rgb(107, 105, 105) 
 }
 
 .labels{
@@ -79,7 +81,9 @@
 
 .login:hover {
     /* background-color: rgb(0, 0, 0); */
-    border: solid rgb(0, 0, 0) 
+    /* border: solid rgb(0, 0, 0)  */
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.4rem rgb(107, 105, 105)
 }
 
 .p {

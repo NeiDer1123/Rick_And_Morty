@@ -22,6 +22,7 @@
     height: 100px;
 }
 
+
 .button {
   height: 25px;
   width: 100px;
@@ -36,5 +37,7 @@
 }
 
 .button:hover {
-  border: solid black
+  /* border: solid black */
+  cursor: pointer;
+  box-shadow: 0 0.1rem 0.4rem rgb(107, 105, 105)
 }

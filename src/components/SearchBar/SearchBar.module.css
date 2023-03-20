@@ -1,13 +1,16 @@
 .input {
     background-color: #ffffff ;
     border: solid #ffffff;
-    font-size: 20px;
+    /* font-size: 20px; */
     margin-top: 12pt;
     border-radius: 8pt;
+    font-variant:small-caps;
+    font-size: 15px;
 }
 
 .input:hover {
-    border: solid black
+    /* border: solid black */
+    box-shadow: 0 0.1rem 0.4rem rgb(107, 105, 105) 
 }
 
 .button {
@@ -27,7 +30,9 @@
 }
 
 .button:hover {
-    border: solid black
+    /* border: solid black */
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.4rem rgb(107, 105, 105) 
 }
 
 .div {

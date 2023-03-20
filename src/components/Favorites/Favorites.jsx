@@ -8,16 +8,15 @@ function Favorites({ favorites }) {
       {favorites.map((character) => {
         return (
           <div key={character.id} className={styles.card}>
-            {/* <h2 className={styles.h2}>{character.name}</h2> */}
             <NavLink to={`/detail/${character.id}`} className={styles.link}>
-              <h2 className={styles.h2}>{character.name}</h2>
-            </NavLink>
-            <h2 className={styles.h2}>{character.species}</h2>
             <img
               src={character.image}
               alt={character.name}
               className={styles.img}
             />
+            </NavLink>
+              <h2 className={styles.h2}>{character.name}</h2>
+            <h2 className={styles.h2}>{character.species}</h2>
           </div>
         );
       })}

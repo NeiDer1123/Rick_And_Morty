@@ -9,7 +9,7 @@ export default function SearchBar({ onSearch }) {
   }
   return (
     <div className={styles.div}>
-      <input type="search" onChange={handleInputChange} className={styles.input}/>
+      <input type="search" onChange={handleInputChange} className={styles.input} placeholder='Busca un personaje...'/>
       <button className={styles.button} onClick={() => onSearch(character)}>Agregar</button>
     </div>
   );

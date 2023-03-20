@@ -2,22 +2,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    flex-wrap: wrap;
+    /* width: 100vw;
+    flex-wrap: wrap; */
 }
 
 .card {
     background-color: #adadac91;
     border: solid rgb(18, 129, 124);;
-    width: 20em;
-    height: 23em;
-    border-radius: 20pt;
+    width: 272px;
+    height: 370px auto;
+    border-radius: 10% 10% ;
     margin-inline-end: 50pt;
     opacity: 1;
-    margin: 30px;
+    margin: 20px;
     text-align: center;
     animation-name: card;
-    animation-duration: 7s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     /* display: flex;
     justify-content: center; */
@@ -25,11 +25,11 @@
 
 @keyframes card {
     0%   {background-color: #adadac91;}
-    20%  {background-color: #98f6a9c4;}
-    40%  {background-color: #9bd3aecb;}
-    60%  {background-color: #ffeebcbd}
-    80% {background-color: #e2e3e7cb;}
-    100% {background-color: #4afde8b2;}
+    20%  {background-color: #86e3cdd7;}
+    40%  {background-color: #d0e6a5ce;}
+    60%  {background-color: #fefc97d7}
+    80% {background-color: #fc887bda;}
+    100% {background-color: #ccabdada;}
 }
 
 .card:hover {
@@ -37,15 +37,15 @@
 }
 
 .h2 {
-    color: rgb(255, 252, 252);
+    color: white;
     background-color: rgb(18, 129, 124);
-    margin: 10pt auto;
+    margin: 10px auto;
     border-radius: 50pt;
     opacity: 0.9;
     width: 80%;
     font-variant:small-caps;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .h2:hover {
@@ -53,11 +53,16 @@
 }
 
 .img {
-    margin-top: 10pt;
+    /* margin-top: 10pt; */
     border: solid;
-    border-color: rgb(18, 129, 124);
-    border-radius: 10%;
-    height: 230px;
+    border-color: rgba(18, 129, 123, 0.705);
+    border-radius: 10% 10% 00% 00%;
+    height: 134px;
+}
+
+.img:hover{
+    height: 268px;
+    transition-duration: 0.5s;
 }
 
 .link {
