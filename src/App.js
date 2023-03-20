@@ -55,7 +55,21 @@ function App() {
   return (
     // style={{ padding: '25px' }}
     <div className="App">
-      {location.pathname !== "/" && <Nav onSearch={onSearch} />}
+      {/* {location.pathname !== "/" && <Nav onSearch={onSearch} />} */}
+      {location.pathname === "/" ? (
+        <div className="div">
+          <Form login={login} />
+          <div>
+            <img 
+              className="img"
+              src="http://images6.fanpop.com/image/photos/39500000/Rick-and-Morty-rick-and-morty-39568272-1041-389.png"
+              alt="imagen"
+            />
+          </div>
+        </div>
+      ) : (
+        <Nav onSearch={onSearch} />
+      )}
       <div>
         <Routes>
           <Route
@@ -64,7 +78,7 @@ function App() {
           ></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/detail/:detailId" element={<Detail />}></Route>
-          <Route path="/" element={<Form login={login} />}></Route>
+          {/* <Route path="/" element={<Form login={login} className="Div"/>}></Route> */}
           <Route path="/favorites" element={<Favorites/>}></Route>
         </Routes>
       </div>

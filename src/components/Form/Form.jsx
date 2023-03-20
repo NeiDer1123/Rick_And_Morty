@@ -1,7 +1,8 @@
 import { useState } from "react";
 import validation from "./validation";
+import styles from "../Form/Form.module.css";
 
-export default function Form({login}) {
+export default function Form({ login }) {
   const [userData, setUserData] = useState({
     username: "",
     password: "",
@@ -24,34 +25,40 @@ export default function Form({login}) {
     );
   }
 
-  function handleSubmit(e){
-    e.preventDefault()
-    login(userData)
+  function handleSubmit(e) {
+    e.preventDefault();
+    login(userData);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>UserName: </label>
-      <input
-        value={userData.username}
-        onChange={handleInputChange}
-        type="text"
-        name="username"
-        placeholder="Escribe tu usuario..."
-      />
-      {errors.username && <p>{errors.username}</p>}
+    <div className={styles.div}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <label className={styles.labels}>UserName: </label>
+        <input
+          className={styles.inputs}
+          value={userData.username}
+          onChange={handleInputChange}
+          type="text"
+          name="username"
+          placeholder="Escribe tu usuario..."
+        />
+        {errors.username && <p className={styles.p}>{errors.username}</p>}
 
-      <label>Password: </label>
-      <input
-        value={userData.password}
-        onChange={handleInputChange}
-        type="password"
-        name="password"
-        placeholder="Escribe tu contraseña..."
-      />
-      {errors.password && <p>{errors.password}</p>}
+        <label className={styles.labels}>Password: </label>
+        <input
+          className={styles.inputs}
+          value={userData.password}
+          onChange={handleInputChange}
+          type="password"
+          name="password"
+          placeholder="Escribe tu contraseña..."
+        />
+        {errors.password && <p className={styles.p}>{errors.password}</p>}
 
-      <button>Login</button>
-    </form>
+        <div>
+          <button className={styles.login}>Login</button>
+        </div>
+      </form>
+    </div>
   );
 }
