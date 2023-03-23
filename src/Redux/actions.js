@@ -11,3 +11,17 @@ export function deleteCharacter(id){
         payload: id
     }
 }
+
+export function filterCards(gender){
+    return {
+        type: 'FILTER',
+        payload: gender
+    }
+}
+
+export function orderCards(id){
+    return {
+        type: 'ORDER',
+        payload: id
+    }
+}
