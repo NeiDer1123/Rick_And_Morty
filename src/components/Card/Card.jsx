@@ -13,18 +13,18 @@ function Card({
   id,
   addCharacter,
   deleteCharacter,
-  myFavorites,
+  allCharacters,
 }) {
   const [isFav, setIsFav] = useState(false);
 
   // console.log(myFavorites);
   useEffect(() => {
-    myFavorites.forEach((fav) => {
+    allCharacters.forEach((fav) => {
       if (fav.id === id) {
         setIsFav(true);
       }
     });
-  }, [myFavorites, id]);
+  }, [allCharacters, id]);
 
   function handleFavorite() {
     if (isFav) {
@@ -67,7 +67,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    myFavorites: state.myFavorites,
+    allCharacters: state.allCharacters,
   };
 }
 

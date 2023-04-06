@@ -9,34 +9,45 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         myFavorites: [...state.allCharacters, action.payload],
-        allCharacters: [...state.myFavorites],
+        allCharacters: [...state.allCharacters, action.payload],
       };
 
     case "DELETE_CHARACTER":
+      const filterDelete = state.allCharacters.filter((e) => e.id !== action.payload)
       return {
         ...state,
-        myFavorites: state.myFavorites.filter((e) => e.id !== action.payload),
+        myFavorites: filterDelete,
+        allCharacters: filterDelete
       };
 
     case "FILTER":
-      // const gender = [...state.allCharacters];
-      const {allCharacters} = state
-      const genderFilter = allCharacters.filter((e) => e.gender === action.payload);
+      const genderFilter = state.allCharacters.filter(
+        (e) => e.gender === action.payload
+      );
 
       return {
-        ...allCharacters,
+        ...state,
         myFavorites: genderFilter,
       };
 
     case "ORDER":
-      // const characters = [...state.allCharacters.id];
+      const filterByOrder = [...state.allCharacters].sort((a,b)=>{
+        if(a.id > b.id){
+          return action.payload === "Ascendente" ? 1 : -1
+        } else if(a.id < b.id){
+          return action.payload === "Descentende" ? 1 : -1
+        } else {
+          return 0;
+        }
+      })
       return {
         ...state,
-        myFavorites: 
-          action.payload === "Ascendente" ?
-          allCharacters.sort((a, b)=> a.id - b.id) :
-          allCharacters.sort((a, b)=> b.id - a.id)
-      }
+        myFavorites: filterByOrder
+          // action.payload === "Ascendente"
+          //   ? state.allCharacters.sort((a, b) => a.id - b.id)
+          //   : state.allCharacters.sort((a, b) => b.id - a.id),
+      };
+
     default:
       return { ...state };
   }

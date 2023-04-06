@@ -19,9 +19,9 @@ export function filterCards(gender){
     }
 }
 
-export function orderCards(id){
+export function orderCards(order){
     return {
         type: 'ORDER',
-        payload: id
+        payload: order
     }
 }
