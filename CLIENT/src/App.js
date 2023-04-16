@@ -7,14 +7,15 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
+import axios from "axios";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const location = useLocation();
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();
-  const username = "";
-  const password = "";
+  // const username = "";
+  // const password = "";
 
   function onSearch(character) {
     fetch(`http://localhost:3001/rickandmorty/character/${character}`)
@@ -41,12 +42,22 @@ function App() {
     setCharacters(characters.filter((character) => character.id !== id));
   }
 
+  // function login(userData) {
+  //   if (userData.password === password && userData.username === username) {
+  //     setAccess(true);
+  //     navigate("/home");
+  //   }
+  // }
+
   function login(userData) {
-    if (userData.password === password && userData.username === username) {
-      setAccess(true);
-      navigate("/home");
-    }
-  }
+    const { username, password } = userData;
+    const URL = 'http://localhost:3001/rickandmorty/login/';
+    axios(URL + `?email=${username}&password=${password}`).then(({ data }) => {
+       const { access } = data;
+       setAccess(data);
+       access && navigate('/home');
+    });
+ }
 
   useEffect(() => {
     !access && navigate("/");

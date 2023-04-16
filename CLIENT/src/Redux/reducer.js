@@ -5,20 +5,25 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_CHARACTER":
-      return {
-        ...state,
-        myFavorites: [...state.allCharacters, action.payload],
-        allCharacters: [...state.allCharacters, action.payload],
-      };
+    // case "ADD_CHARACTER":
+    //   return {
+    //     ...state,
+    //     myFavorites: [...state.allCharacters, action.payload],
+    //     allCharacters: [...state.allCharacters, action.payload],
+    //   };
+    case 'ADD_CHARACTER':
+      return { ...state, myFavorites: action.payload, allCharacters: action.payload };
 
-    case "DELETE_CHARACTER":
-      const filterDelete = state.allCharacters.filter((e) => e.id !== action.payload)
-      return {
-        ...state,
-        myFavorites: filterDelete,
-        allCharacters: filterDelete
-      };
+    // case "DELETE_CHARACTER":
+    //   const filterDelete = state.allCharacters.filter((e) => e.id !== action.payload)
+    //   return {
+    //     ...state,
+    //     myFavorites: filterDelete,
+    //     allCharacters: filterDelete
+    //   };
+
+    case 'DELETE_CHARACTER':
+      return { ...state, myFavorites: action.payload };
 
     case "FILTER":
       const genderFilter = state.allCharacters.filter(
