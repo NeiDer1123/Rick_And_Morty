@@ -17,32 +17,43 @@ function Favorites({ favorites }) {
   return (
     <div className={styles.container}>
       <div>
-        <select name="Order" onChange={(e)=> dispatch(orderCards(e.target.value))}>
+        <select
+          className={styles.filterFav}
+          name="Order"
+          onChange={(e) => dispatch(orderCards(e.target.value))}
+        >
           <option value="Ascendente">Ascendente</option>
           <option value="Descendente">Descendente</option>
         </select>
-        <select name="Filter" onChange={(e)=> dispatch(filterCards(e.target.value))}>
+        <select
+          className={styles.filterFav}
+          name="Filter"
+          onChange={(e) => dispatch(filterCards(e.target.value))}
+        >
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Unknown">Unknown</option>
           <option value="Genderless">Genderless</option>
         </select>
       </div>
-      {favorites.map((character) => {
-        return (
-          <div key={character.id} className={styles.card}>
-            <NavLink to={`/detail/${character.id}`} className={styles.link}>
-              <img
-                src={character.image}
-                alt={character.name}
-                className={styles.img}
-              />
-            </NavLink>
-            <h2 className={styles.h2}>{character.name}</h2>
-            <h2 className={styles.h2}>{character.species}</h2>
-          </div>
-        );
-      })}
+      <br />
+      <div className={styles.containerFav}>
+        {favorites.map((character) => {
+          return (
+            <div key={character.id} className={styles.card}>
+              <NavLink to={`/detail/${character.id}`} className={styles.link}>
+                <img
+                  src={character.image}
+                  alt={character.name}
+                  className={styles.img}
+                />
+              </NavLink>
+              <h2 className={styles.h2}>{character.name}</h2>
+              <h2 className={styles.h2}>{character.species}</h2>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

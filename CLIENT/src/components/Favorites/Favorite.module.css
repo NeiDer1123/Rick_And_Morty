@@ -1,10 +1,22 @@
 .container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    flex-direction: column;
     /* width: 100vw;
     flex-wrap: wrap; */
 }
+
+.containerFav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+
 
 .card {
     background-color: #adadac91;
@@ -67,4 +79,16 @@
 
 .link {
     text-decoration: none;
+}
+
+.filterFav {
+    height: 25px;
+    margin: 5pt;
+    color: rgba(255, 255, 255, 0.904);
+    background-color:rgba(13, 100, 97, 0.89);
+    border-radius: 8pt;
+    /* font-size: 25px; */
+    font-variant:small-caps;
+    border-color: rgba(0, 0, 0, 0);
+    text-align: center;
 }

@@ -40,7 +40,7 @@ export default function Form({ login }) {
           onChange={handleInputChange}
           type="text"
           name="username"
-          placeholder="Escribe tu usuario..."
+          placeholder="Enter your username..."
         />
         {errors.username && <p className={styles.p}>{errors.username}</p>}
 
@@ -51,7 +51,7 @@ export default function Form({ login }) {
           onChange={handleInputChange}
           type="password"
           name="password"
-          placeholder="Escribe tu contraseña..."
+          placeholder="Enter your password..."
         />
         {errors.password && <p className={styles.p}>{errors.password}</p>}
 
